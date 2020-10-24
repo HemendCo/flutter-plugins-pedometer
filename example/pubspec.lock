@@ -91,9 +91,11 @@ packages:
   pedometer:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "0511af7ad7487eb27a8276df39d3406f7d20dc1d"
+      url: "https://github.com/HemendCo/flutter-plugins-pedometer.git"
+    source: git
     version: "0.0.1"
   sky_engine:
     dependency: transitive
