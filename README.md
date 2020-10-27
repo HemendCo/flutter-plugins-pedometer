@@ -32,7 +32,7 @@ Pedometer Sensor
 
 # Usage
 
-## init
+## Init
 
 ```dart
 Pedometer ped = Pedometer();
