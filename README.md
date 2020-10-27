@@ -10,7 +10,10 @@ This plugin gives pedometer and step detection for **Android** and saves daily.
 1. Edit `pubspec.yaml`
 ```csharp
 dependencies:
-    awareframework_pedometer
+  pedometer:
+    git:
+      url: https://github.com/HemendCo/flutter-plugins-pedometer.git
+      ref: main
 ```
 2. Import the package on your source code
 ```csharp
