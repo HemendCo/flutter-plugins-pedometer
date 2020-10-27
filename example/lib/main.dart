@@ -21,13 +21,13 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     update();
-    ped.events(onSensorChanged: (date, step) async {
+    ped.events(onSensorChanged: (StepData sd) async {
       all = await ped.getAll();
 
       if (!mounted) return;
 
       setState(() {
-        _data = StepData(date, step);
+        _data = sd;
       });
     });
   }

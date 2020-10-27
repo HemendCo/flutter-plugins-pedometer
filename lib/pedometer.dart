@@ -22,7 +22,7 @@ class Pedometer {
           if (onSensorChangedCallback != null) {
             String date = result.containsKey('date') ? result['date'] : "";
             int step = result.containsKey('step') ? result['step'] : 0;
-            onSensorChangedCallback(date, step);
+            onSensorChangedCallback(StepData(date, step));
           }
           break;
       }
@@ -75,7 +75,7 @@ class Pedometer {
   }
 }
 
-typedef void OnSensorChanged(String date, int step);
+typedef void OnSensorChanged(StepData sd);
 
 class StepData {
   final String date;
