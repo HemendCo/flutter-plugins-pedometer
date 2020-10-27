@@ -1,15 +1,96 @@
 # pedometer
 
-Pedometer and step detection for Android.
+This plugin gives pedometer and step detection for **Android** and saves daily.
 
-## Getting Started
+# Install the plugin into project
+## iOS
+> *Currently No Support*
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Android
+1. Edit `pubspec.yaml`
+```csharp
+dependencies:
+    awareframework_pedometer
+```
+2. Import the package on your source code
+```csharp
+import 'package:pedometer/pedometer.dart';
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Public functions
+Pedometer Sensor
+* start()
+* stop()
+* isStarted()
+* getToday()
+* getAll()
+* reset()
+* events()
 
+# Usage
+
+## init
+
+```dart
+Pedometer ped = Pedometer();
+```
+
+## Start
+
+```dart
+bool isStarted = await ped.isStarted();
+
+if(!isStarted) {
+    await ped.start();
+}
+```
+
+## Stop
+
+```dart
+bool isStarted = await ped.isStarted();
+
+if(isStarted) {
+    await ped.stop();
+}
+```
+
+
+## Get today steps
+
+```dart
+StepData today = await ped.getToday();
+
+print(today.date);
+print(today.step);
+```
+
+
+## Get all steps
+```dart
+List<StepData> all = await ped.getAll();
+
+for(var i = 0; all != null && i < all.length; i++) {
+    StepData sd = all[i];
+    
+    print(sd.date);
+    print(sd.step);
+}
+```
+
+## Reset - delete all data
+
+```dart
+reset();
+```
+
+## Event - when sensor changed
+
+```dart
+ped.events(onSensorChanged: (date, step) async {
+    StepData sd = StepData(date, step);
+    
+    print(sd.date);
+    print(sd.step);
+});
+```
