@@ -84,7 +84,9 @@ for(var i = 0; all != null && i < all.length; i++) {
 ## Reset - delete all data
 
 ```dart
-reset();
+bool isReseted = await ped.reset();
+
+print("Is reseted? " + (isReseted ? "Yes" : "No"));
 ```
 
 ## Event - when sensor changed
