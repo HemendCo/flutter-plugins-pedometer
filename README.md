@@ -92,9 +92,7 @@ print("Is reseted? " + (isReseted ? "Yes" : "No"));
 ## Event - when sensor changed
 
 ```dart
-ped.events(onSensorChanged: (date, step) async {
-    StepData sd = StepData(date, step);
-    
+ped.events(onSensorChanged: (StepData sd) async {
     print(sd.date);
     print(sd.step);
 });
